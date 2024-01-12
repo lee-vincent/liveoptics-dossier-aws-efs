@@ -33,10 +33,15 @@ rm -rf LiveOptics.Dossier.Linux.x64.tar.gz
 # Create directories and generate random files
 for x in {1..20}; do
     sudo mkdir "$NFS_MOUNT_PATH/dir-$x"
-    for i in {1..10}; do
-        sudo dd if=/dev/urandom of="$NFS_MOUNT_PATH/dir-$x/file_${i}.txt" bs=1M count=1
-    done
 done
+
+
+for x in {1..20}; do
+  for i in {1..10}; do
+    sudo dd if=/dev/urandom of="$NFS_MOUNT_PATH/dir-$x/file_${i}.txt" bs=1M count=1;
+  done
+done
+
 
 # Run LiveOptics Dossier
 sudo ./LiveOptics.Dossier.Linux.ConsoleApp "$NFS_MOUNT_PATH/dir-{1..20}"
