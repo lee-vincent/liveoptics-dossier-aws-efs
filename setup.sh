@@ -44,4 +44,4 @@ done
 
 
 # Run LiveOptics Dossier
-sudo ./LiveOptics.Dossier.Linux.ConsoleApp "$NFS_MOUNT_PATH/dir-{1..20}"
+sudo ./LiveOptics.Dossier.Linux.ConsoleApp $NFS_MOUNT_PATH/dir-{1..20}
